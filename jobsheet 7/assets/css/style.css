@@ -1,0 +1,690 @@
+/* =========================================================
+   Open Trip Malang — Design Tokens
+   ========================================================= */
+:root{
+  --hutan-900: #16221A;
+  --hutan-800: #1F2E23;
+  --hutan-700: #2C4433;
+  --kertas: #F3EEE2;
+  --kertas-2: #EAE3D2;
+  --emas: #D9A441;
+  --emas-dim: #B4842E;
+  --kabut: #5C7A82;
+  --arang: #22261F;
+  --putih: #FFFBF3;
+
+  --font-judul: "Fraunces", Georgia, serif;
+  --font-teks: "Work Sans", -apple-system, Segoe UI, sans-serif;
+
+  --radius-kartu: 2px;
+  --radius-lembut: 10px;
+  --radius-hero: 16px;
+  --garis: 1px solid rgba(34,38,31,0.15);
+}
+
+*{box-sizing:border-box;}
+
+html{scroll-behavior:smooth;}
+
+body{
+  font-family: var(--font-teks);
+  color: var(--arang);
+  background: var(--kertas);
+  line-height: 1.6;
+}
+
+h1,h2,h3,h4,.font-judul{
+  font-family: var(--font-judul);
+  font-weight: 600;
+  color: var(--hutan-900);
+  letter-spacing: -0.01em;
+}
+
+a{ color: inherit; text-decoration: none; }
+
+.container-sempit{
+  max-width: 1120px;
+  margin: 0 auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+/* ---------- Navbar ---------- */
+.navbar-otm{
+  background: var(--kertas);
+  border-bottom: var(--garis);
+  padding: 1.1rem 0;
+}
+.navbar-otm .brand{
+  font-family: var(--font-judul);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--hutan-900);
+}
+.navbar-otm .brand span{ color: var(--emas-dim); }
+.navbar-otm .nav-link{
+  font-size: 0.95rem;
+  color: var(--arang);
+  margin-left: 1.75rem;
+  padding: 0;
+  border-bottom: 2px solid transparent;
+  transition: border-color .2s ease, color .2s ease;
+}
+.navbar-otm .nav-link:hover,
+.navbar-otm .nav-link.active{
+  color: var(--hutan-900);
+  border-bottom-color: var(--emas);
+}
+.btn-otm{
+  background: var(--hutan-900);
+  color: var(--putih) !important;
+  padding: 0.55rem 1.3rem;
+  border-radius: var(--radius-kartu);
+  font-size: 0.9rem;
+  border: none;
+  transition: background .2s ease;
+}
+.btn-otm:hover{ background: var(--emas-dim); color: var(--putih); }
+
+.btn-otm-outline{
+  border: 1px solid var(--hutan-900);
+  color: var(--hutan-900) !important;
+  padding: 0.5rem 1.25rem;
+  border-radius: var(--radius-kartu);
+  font-size: 0.9rem;
+  background: transparent;
+  transition: all .2s ease;
+}
+.btn-otm-outline:hover{ background: var(--hutan-900); color: var(--putih) !important; }
+
+/* ---------- Kotak/label solid di belakang teks (highlight) ---------- */
+.kotak-label{
+  display: inline-block;
+  background: var(--hutan-900);
+  color: var(--emas);
+  padding: 0.4rem 0.9rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  border-radius: var(--radius-kartu);
+}
+.kotak-label.terang{
+  background: var(--kertas);
+  color: var(--hutan-900);
+}
+.kotak-judul{
+  display: inline-block;
+  background: rgba(22,34,26,0.7);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  padding: 0.5rem 1.1rem;
+  border-radius: var(--radius-hero);
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+.kotak-teks{
+  background: rgba(22,34,26,0.6);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  padding: 1.25rem 1.5rem;
+  border-radius: var(--radius-hero);
+  display: inline-block;
+}
+
+/* ---------- Hero ---------- */
+.hero{
+  background: var(--hutan-900);
+  color: var(--kertas);
+  position: relative;
+  overflow: hidden;
+  padding: 5rem 0 0 0;
+}
+.hero-foto{
+  background-image:
+    linear-gradient(to top, rgba(15,22,17,0.96) 0%, rgba(15,22,17,0.55) 45%, rgba(15,22,17,0.35) 100%),
+    url("https://commons.wikimedia.org/wiki/Special:FilePath/Bromo%20sunrise%20May2014.jpg?width=1600");
+  background-size: cover;
+  background-position: center 65%;
+  min-height: 78vh;
+  display: flex;
+  align-items: center;
+}
+@media (max-width: 767px){
+  .hero-foto{ min-height: auto; padding-top: 3rem; }
+}
+.hero .baris-kecil{
+  color: var(--arang);
+  background: var(--emas);
+  display: inline-block;
+  padding: 0.4rem 1rem;
+  border-radius: 999px;
+  font-family: var(--font-teks);
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-bottom: 1.25rem;
+}
+.hero h1{
+  color: var(--putih);
+  font-size: clamp(2.4rem, 5vw, 4rem);
+  line-height: 1.05;
+  max-width: 15ch;
+}
+.hero p.lead{
+  color: rgba(243,238,226,0.82);
+  max-width: 42ch;
+  font-size: 1.1rem;
+}
+.hero-stats{
+  display:flex;
+  gap: 2.5rem;
+  margin-top: 2.5rem;
+  padding: 1.5rem 1.75rem;
+  background: rgba(15,22,17,0.65);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border-radius: var(--radius-hero);
+  border-left: 3px solid var(--emas);
+}
+.hero-stats .angka{
+  font-family: var(--font-judul);
+  font-size: 1.9rem;
+  color: var(--emas);
+  display:block;
+}
+.hero-stats .label{
+  font-size: 0.85rem;
+  color: rgba(243,238,226,0.7);
+}
+.hero-svg-wrap{ margin-top: 3rem; }
+.hero-svg-wrap svg{ display:block; width:100%; height:auto; }
+
+/* ---------- Section umum ---------- */
+section{ padding: 5rem 0; }
+.eyebrow{
+  display: inline-block;
+  background: var(--hutan-900);
+  color: var(--emas);
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.3rem 0.75rem;
+  border-radius: var(--radius-lembut);
+  margin-bottom: 0.9rem;
+}
+.header-halaman .eyebrow{
+  background: var(--emas);
+  color: var(--arang);
+}
+.section-judul{
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  max-width: 20ch;
+}
+.section-intro{
+  max-width: 60ch;
+  color: rgba(34,38,31,0.75);
+}
+
+.garis-pembatas{
+  border: none;
+  border-top: var(--garis);
+  margin: 0;
+}
+
+/* ---------- Kartu trip ---------- */
+.kartu-trip{
+  border-top: 2px solid var(--hutan-900);
+  padding-top: 1.25rem;
+  height: 100%;
+}
+.kartu-trip .nomor{
+  font-family: var(--font-judul);
+  color: var(--putih);
+  background: var(--hutan-900);
+  display: inline-block;
+  padding: 0.25rem 0.7rem;
+  border-radius: var(--radius-lembut);
+  font-size: 0.85rem;
+}
+.kartu-trip h3{
+  font-size: 1.4rem;
+  margin: 0.4rem 0 0.6rem 0;
+}
+.kartu-trip .lokasi{
+  color: var(--kabut);
+  font-size: 0.88rem;
+  margin-bottom: 0.75rem;
+}
+.kartu-trip p{
+  color: rgba(34,38,31,0.75);
+  font-size: 0.95rem;
+}
+.kartu-trip .harga-baris{
+  display:flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: var(--garis);
+}
+.kartu-trip .harga{
+  font-family: var(--font-judul);
+  font-size: 1.25rem;
+  color: var(--hutan-900);
+}
+.kartu-trip .satuan{ font-size: 0.8rem; color: var(--kabut); }
+
+/* ---------- Testimoni ---------- */
+.blok-testimoni{
+  background: var(--hutan-900);
+  color: var(--kertas);
+}
+.kartu-testimoni{
+  border-left: 2px solid var(--emas);
+  padding-left: 1.25rem;
+  height: 100%;
+}
+.kartu-testimoni p{ color: rgba(243,238,226,0.88); font-style: italic; }
+.kartu-testimoni .baris-nama{ display:flex; align-items:center; gap:0.75rem; margin-top: 0.9rem; }
+.avatar-inisial{
+  width: 42px; height: 42px;
+  border-radius: 50%;
+  background: var(--emas);
+  color: var(--arang);
+  display:flex; align-items:center; justify-content:center;
+  font-family: var(--font-judul);
+  font-weight: 700;
+  font-size: 0.95rem;
+  flex-shrink: 0;
+}
+.kartu-testimoni .nama{ color: var(--emas); font-family: var(--font-judul); margin-top: 0; }
+.kartu-testimoni .asal{ color: rgba(243,238,226,0.6); font-size: 0.85rem; }
+
+/* ---------- CTA ---------- */
+.cta-strip{
+  background: var(--emas);
+  color: var(--arang);
+}
+.cta-strip h2{ color: var(--arang); }
+
+/* ---------- Footer ---------- */
+footer{
+  background: var(--hutan-900);
+  color: rgba(243,238,226,0.75);
+  padding: 3.5rem 0 1.5rem 0;
+}
+footer h5{ color: var(--kertas); font-family: var(--font-judul); }
+footer a:hover{ color: var(--emas); }
+footer .footer-bawah{
+  border-top: 1px solid rgba(243,238,226,0.15);
+  margin-top: 2.5rem;
+  padding-top: 1.5rem;
+  font-size: 0.85rem;
+  color: rgba(243,238,226,0.5);
+}
+
+/* ---------- Halaman dalam (about/kontak/galeri) ---------- */
+.header-halaman{
+  background: var(--hutan-900);
+  color: var(--kertas);
+  padding: 4.5rem 0;
+  position: relative;
+}
+.header-halaman.header-foto{
+  background-size: cover;
+  background-position: center;
+}
+.header-halaman.header-foto::before{
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(15,22,17,0.92), rgba(15,22,17,0.72));
+}
+.header-halaman .container-sempit{ position: relative; z-index: 1; }
+.header-foto-tentang{
+  background-image: url("https://commons.wikimedia.org/wiki/Special:FilePath/Kawah-Ijen%20Indonesia%20The-sulfur-mine-at-the-floor-of-the-crater-01.jpg?width=1600");
+}
+.header-foto-paket{
+  background-image: url("https://commons.wikimedia.org/wiki/Special:FilePath/Bromo%20Tengger%20Semeru%20National%20Park%20Java%20489.jpg?width=1600");
+}
+.header-foto-galeri{
+  background-image: url("https://commons.wikimedia.org/wiki/Special:FilePath/Bromo%20sunrise%20May2014.jpg?width=1600");
+}
+.header-foto-kontak{
+  background-image: url("https://commons.wikimedia.org/wiki/Special:FilePath/Danau%20Belerang%20Ijen.jpg?width=1600");
+}
+.header-halaman .eyebrow{ color: var(--emas); }
+.header-halaman h1{ color: var(--putih); font-size: clamp(2rem, 4vw, 3rem); }
+
+.kartu-nilai{
+  border: var(--garis);
+  padding: 1.75rem;
+  height: 100%;
+}
+.kartu-nilai .ikon{ color: var(--emas-dim); margin-bottom: 0.75rem; }
+
+.galeri-item{
+  aspect-ratio: 4/3;
+  border-radius: var(--radius-kartu);
+  overflow: hidden;
+  position: relative;
+}
+.galeri-item svg{ width:100%; height:100%; display:block; }
+.galeri-item{ position:relative; background: var(--hutan-800); }
+.galeri-item .caption{
+  position:absolute; left:0.75rem; right:0.75rem; bottom:0.75rem;
+  background: rgba(15,22,17,0.88);
+  color: var(--kertas);
+  font-size: 0.85rem;
+  font-weight: 500;
+  padding: 0.65rem 0.9rem;
+  border-radius: var(--radius-kartu);
+  border-left: 3px solid var(--emas);
+  width: fit-content;
+}
+
+.kotak-kontak{
+  border: var(--garis);
+  padding: 2rem;
+}
+.form-control-otm{
+  background: var(--putih);
+  border: var(--garis);
+  border-radius: var(--radius-kartu);
+  padding: 0.65rem 0.9rem;
+  font-family: var(--font-teks);
+}
+.form-control-otm:focus{
+  outline: 2px solid var(--emas);
+  outline-offset: 1px;
+  border-color: var(--emas);
+  box-shadow: none;
+}
+label.label-otm{
+  font-size: 0.85rem;
+  color: var(--kabut);
+  margin-bottom: 0.35rem;
+  display:block;
+}
+
+/* ---------- Bar aksi mengambang khusus HP ---------- */
+.bar-aksi-hp{
+  display: none;
+  position: fixed;
+  left: 0; right: 0; bottom: 0;
+  z-index: 998;
+  background: var(--kertas);
+  border-top: 1px solid rgba(34,38,31,0.15);
+  box-shadow: 0 -4px 16px rgba(0,0,0,0.12);
+  padding: 0.6rem 0.9rem;
+  padding-bottom: calc(0.6rem + env(safe-area-inset-bottom, 0px));
+}
+.bar-aksi-hp .row-aksi{
+  display: flex;
+  gap: 0.6rem;
+}
+.bar-aksi-hp a{
+  flex: 1;
+  text-align: center;
+  padding: 0.7rem 0.5rem;
+  border-radius: var(--radius-lembut);
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+.bar-aksi-hp .aksi-wa{
+  background: #25D366;
+  color: #fff !important;
+}
+.bar-aksi-hp .aksi-paket{
+  background: var(--hutan-900);
+  color: var(--putih) !important;
+}
+
+/* ---------- Kartu geser (horizontal scroll snap) di HP ---------- */
+.geser-hp{
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 0.5rem;
+  scrollbar-width: none;
+}
+.geser-hp::-webkit-scrollbar{ display:none; }
+.geser-hp .item-geser{
+  scroll-snap-align: start;
+  flex: 0 0 82%;
+}
+
+/* ---------- Tabel jadwal jadi kartu di HP ---------- */
+@media (max-width: 640px){
+  .tabel-jadwal thead{ display:none; }
+  .tabel-jadwal, .tabel-jadwal tbody, .tabel-jadwal tr, .tabel-jadwal td{
+    display: block;
+    width: 100%;
+  }
+  .tabel-jadwal tr{
+    border: var(--garis);
+    border-radius: var(--radius-lembut);
+    padding: 0.9rem 1rem;
+    margin-bottom: 0.9rem;
+  }
+  .tabel-jadwal td{
+    border-bottom: none;
+    padding: 0.3rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9rem;
+  }
+  .tabel-jadwal td:first-child{
+    font-family: var(--font-judul);
+    font-size: 1.05rem;
+    color: var(--hutan-900);
+    display: block;
+    padding-bottom: 0.5rem;
+    margin-bottom: 0.4rem;
+    border-bottom: var(--garis);
+  }
+  .tabel-jadwal td::before{
+    content: attr(data-label);
+    color: var(--kabut);
+    font-size: 0.82rem;
+  }
+  .tabel-jadwal td:first-child::before{ content: none; }
+}
+
+/* ---------- Instagram teaser ---------- */
+.grid-instagram{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.75rem;
+}
+.grid-instagram .ig-item{
+  aspect-ratio: 1/1;
+  border-radius: var(--radius-lembut);
+  overflow: hidden;
+  position: relative;
+}
+.grid-instagram .ig-item img{ width:100%; height:100%; object-fit:cover; display:block; }
+@media (max-width: 575px){
+  .grid-instagram{ grid-template-columns: repeat(3, 1fr); }
+}
+
+/* ---------- Checklist barang bawaan ---------- */
+.kotak-checklist{
+  border: var(--garis);
+  border-left: 3px solid var(--emas);
+  padding: 1.5rem 1.75rem;
+  border-radius: var(--radius-lembut);
+}
+.kotak-checklist ul{
+  list-style: none;
+  padding: 0;
+  margin: 0.75rem 0 0 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.6rem;
+}
+.kotak-checklist li{
+  font-size: 0.92rem;
+  color: rgba(34,38,31,0.8);
+  position: relative;
+  padding-left: 1.35rem;
+}
+.kotak-checklist li::before{
+  content: "\2713";
+  position: absolute;
+  left: 0;
+  color: var(--emas-dim);
+  font-weight: 700;
+}
+@media (max-width: 480px){
+  .kotak-checklist ul{ grid-template-columns: 1fr; }
+}
+
+.wa-mengambang{
+  position: fixed;
+  right: 1.25rem;
+  bottom: 1.25rem;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: #25D366;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.28);
+  z-index: 999;
+  transition: transform .2s ease;
+}
+.wa-mengambang:hover{ transform: scale(1.08); }
+.wa-mengambang svg{ width: 30px; height: 30px; }
+
+/* ---------- FAQ ---------- */
+.faq-item{
+  border-bottom: var(--garis);
+  padding: 1.1rem 0;
+}
+.faq-item summary{
+  cursor: pointer;
+  font-family: var(--font-judul);
+  font-size: 1.05rem;
+  color: var(--hutan-900);
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.faq-item summary::-webkit-details-marker{ display:none; }
+.faq-item summary::after{
+  content: "+";
+  font-size: 1.4rem;
+  color: var(--emas-dim);
+  margin-left: 1rem;
+}
+.faq-item[open] summary::after{ content: "\2212"; }
+.faq-item p{
+  margin-top: 0.75rem;
+  color: rgba(34,38,31,0.75);
+  font-size: 0.95rem;
+}
+
+/* ---------- Jadwal keberangkatan ---------- */
+.tabel-jadwal{
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.92rem;
+}
+.tabel-jadwal th{
+  text-align: left;
+  font-family: var(--font-judul);
+  color: var(--hutan-900);
+  padding: 0.75rem 1rem;
+  border-bottom: 2px solid var(--hutan-900);
+}
+.tabel-jadwal td{
+  padding: 0.85rem 1rem;
+  border-bottom: var(--garis);
+}
+.status-kuota{
+  display: inline-block;
+  padding: 0.2rem 0.65rem;
+  border-radius: var(--radius-lembut);
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+.status-kuota.tersedia{ background: rgba(44,68,51,0.15); color: var(--hutan-700); }
+.status-kuota.terbatas{ background: rgba(217,164,65,0.2); color: var(--emas-dim); }
+.status-kuota.penuh{ background: rgba(34,38,31,0.1); color: var(--kabut); }
+a:focus-visible, button:focus-visible, .nav-link:focus-visible{
+  outline: 2px solid var(--emas);
+  outline-offset: 2px;
+}
+
+@media (max-width: 767px){
+  /* Hero lebih ringkas & pas di layar HP */
+  .hero-foto{ min-height: auto; padding-top: 2.5rem; }
+  .hero{ padding-bottom: 1rem; }
+  .hero h1{ font-size: 2rem; max-width: 100%; }
+  .hero p.lead{ font-size: 1rem; max-width: 100%; }
+  .hero-stats{
+    gap: 1.25rem;
+    flex-wrap: wrap;
+    padding: 1.1rem 1.25rem;
+  }
+  .hero-stats .angka{ font-size: 1.5rem; }
+
+  /* Section lebih rapat di HP */
+  section{ padding: 3rem 0; }
+  .section-judul{ max-width: 100%; }
+
+  /* Navbar: menu lebih besar & mudah disentuh */
+  .navbar-otm .nav-link{
+    margin-left: 0;
+    padding: 0.85rem 0.25rem;
+    font-size: 1.05rem;
+    border-bottom: 1px solid rgba(34,38,31,0.1);
+  }
+  .navbar-otm .btn-otm{
+    width: 100%;
+    text-align: center;
+    padding: 0.85rem;
+  }
+
+  /* Tombol full-width supaya gampang disentuh */
+  .hero .btn-otm, .hero .btn-otm-outline{
+    width: 100%;
+    text-align: center;
+  }
+  .hero .d-flex.gap-3{ flex-direction: column; }
+
+  /* Bar aksi bawah muncul, tombol bulat WA disembunyikan biar tidak dobel */
+  .bar-aksi-hp{ display: block; }
+  .wa-mengambang{ display: none; }
+  body{ padding-bottom: 4.5rem; }
+
+  /* Kartu trip preview di beranda jadi geser horizontal */
+  .geser-aktif-hp{
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 0.5rem;
+    scrollbar-width: none;
+    margin-left: -0.75rem;
+    margin-right: -0.75rem;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+  .geser-aktif-hp::-webkit-scrollbar{ display:none; }
+  .geser-aktif-hp > [class*="col-"]{
+    flex: 0 0 82%;
+    scroll-snap-align: start;
+  }
+
+  /* Galeri 2 kolom di HP biar lebih ringkas, bukan numpuk 1 kolom penuh */
+  .grid-galeri-hp > [class*="col-"]{
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+}
