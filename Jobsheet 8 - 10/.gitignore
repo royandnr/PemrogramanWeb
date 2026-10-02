@@ -1,0 +1,9 @@
+# Rahasia: berisi password database hosting
+includes/config.local.php
+
+# File sampah sistem / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.log
