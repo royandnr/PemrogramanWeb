@@ -7,7 +7,7 @@ try {
 
     echo "<h2>Database berhasil tersambung!</h2>";
 
-    $stmt = $pdo->query("SELECT current_database(), current_user");
+    $stmt = $pdo->query("SELECT DATABASE() AS database_name, CURRENT_USER() AS db_user");
     $data = $stmt->fetch();
 
     echo "<pre>";
@@ -19,6 +19,6 @@ try {
     echo "<h2>Database GAGAL tersambung</h2>";
 
     echo "<pre>";
-    echo "Error: " . $e->getMessage();
+    echo "Error: " . htmlspecialchars($e->getMessage());
     echo "</pre>";
 }
